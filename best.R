@@ -11,18 +11,18 @@ best<-function(state,outcome){
     min<-min(as.numeric(data[,x]),na.rm=TRUE)
     list<-subset(data,data[,x]==min,select=Hospital.Name,drop=TRUE)
     list<-list[order(list)]
-    list[1]
+    as.character(list[1])
   }
   if(outcome=="heart attack"){
-    print(returnMIN(11,state))
+    m<-returnMIN(11,state)
   }
   if(outcome=="heart failure"){
-    print(returnMIN(17,state))
+    m<-returnMIN(17,state)
   }
   if(outcome=="pneumonia"){
-    print(returnMIN(23,state))
+    m<-returnMIN(23,state)
   }
-  
+  return(m)
  
   
 }
